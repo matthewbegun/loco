@@ -1,0 +1,17 @@
+dependencies:
+    # set the version up the top
+    - python=3.7
+    # package managers
+    - pip
+    - conda
+    # tools
+    - black=19.10b
+    - flake8-bugbear
+    - ipython
+    - isort
+    - mypy
+    - pre-commit
+    - pylint
+    - pytest
+    - pytest-cov
+    - rope

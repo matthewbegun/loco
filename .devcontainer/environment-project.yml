@@ -1,0 +1,19 @@
+name: base
+dependencies:
+    # project candidate packaging
+    - metaphone
+    - doublemetaphone
+    - ftfy
+    - fuzzywuzzy
+    - python-levenshtein
+    - numexpr
+    - jellyfish
+    - textdistance[extras]
+    - sparse_dot_topn
+    # such a nag
+    - pip
+    - pip:
+        - recordlinkage
+        - strsimpy
+        - fuzzymatcher
+        - string-grouper
