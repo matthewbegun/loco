@@ -1,9 +1,11 @@
+channels:
+    - conda-forge
+    - defaults
 dependencies:
     # data science starts here
     - matplotlib
     - numpy
     - pandas
-    - pyreadstat
     - scikit-learn
     - scipy
     # such a nag

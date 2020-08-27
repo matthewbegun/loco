@@ -1,19 +1,18 @@
-name: base
+channels:
+    - conda-forge
+    - defaults
 dependencies:
     # project candidate packaging
-    - metaphone
-    - doublemetaphone
     - ftfy
-    - fuzzywuzzy
-    - python-levenshtein
-    - numexpr
     - jellyfish
-    - textdistance[extras]
+    - numexpr
+    - pyreadstat
+    - python-levenshtein
     - sparse_dot_topn
+    - textdistance
     # such a nag
     - pip
     - pip:
         - recordlinkage
         - strsimpy
-        - fuzzymatcher
         - string-grouper

@@ -1,9 +1,12 @@
+channels:
+    - conda-forge
+    - defaults
 dependencies:
     # set the version up the top
-    - python=3.7
+    - python
     # package managers
-    - pip
     - conda
+    - pip
     # tools
     - black=19.10b
     - flake8-bugbear
@@ -14,4 +17,4 @@ dependencies:
     - pylint
     - pytest
     - pytest-cov
-    - rope
+    - requests
