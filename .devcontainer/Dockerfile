@@ -52,21 +52,21 @@ RUN apt-get update  > /dev/null \
     && conda update --all -y \
     && conda clean --all -y
 
-# FROM os as core
+FROM os as core
 
-# COPY environment-core.yml /tmp/conda-tmp/
-# # Update Python environment
-# RUN /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment-core.yml \
-#     && rm -rf /tmp/conda-tmp \
-#     && conda clean --all -f -y
+COPY environment-core.yml /tmp/conda-tmp/
+# Update Python environment
+RUN /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment-core.yml \
+    && rm -rf /tmp/conda-tmp \
+    && conda clean --all -f -y
 
-# FROM core as data_science
+FROM core as data_science
 
-# COPY environment-data_science.yml /tmp/conda-tmp/
-# # Update Python environment based on environment.yml (if present)
-# RUN /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment-data_science.yml \
-#     && rm -rf /tmp/conda-tmp \
-#     && ipython profile create \
-#     && ipython -c "from pyforest.auto_import import setup; setup()" \
-#     && conda clean --all -f -y
+COPY environment-data_science.yml /tmp/conda-tmp/
+# Update Python environment based on environment.yml (if present)
+RUN /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment-data_science.yml \
+    && rm -rf /tmp/conda-tmp \
+    && ipython profile create \
+    && ipython -c "from pyforest.auto_import import setup; setup()" \
+    && conda clean --all -f -y
 
