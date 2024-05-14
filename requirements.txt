@@ -1,6 +1,9 @@
-jupytext
-jupyterlab_execute_time
 jupyter-ai 
+jupyterlab_execute_time
+jupytext
 plotnine
-r-tidyverse
+r-languageserver
+r-pacman
 r-tidymodels
+r-tidyverse
+ruff
