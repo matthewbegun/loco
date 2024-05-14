@@ -4,6 +4,7 @@
 
 - then
     - play with `devcontainer.json` templates/features to see if their is a better way (think about handling project requirements/not having to host images)
+    - user options in devcontainer spec to match up with jovyan etc for settings
     - customise codespace experience using `devcontainer.json`, `.vscode` and github dotfiles
     - experiment with using a *much* smaller base image and only adding in useful things
     - rust?
