@@ -1,1 +1,6 @@
 jupytext
+jupyterlab_execute_time
+jupyter-ai 
+plotnine
+r-tidyverse
+r-tidymodels
