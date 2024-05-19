@@ -1,8 +1,7 @@
-jupyter-ai
 jupyterlab_execute_time
 jupytext
-lxml
 plotnine
+r-ggally
 r-languageserver
 r-pacman
 r-tidymodels
