@@ -1,5 +1,11 @@
 # loco with flavours
 
+## podman compatibility update
+
+```
+ podman pull docker.io/matthewbegun/loco:latest
+```
+
 ## want
 
 - then
