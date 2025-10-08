@@ -1,11 +1,5 @@
 #!/bin/bash
-# loco.bash
-
-# shim for running loco; needs to be linked into path
-# from inside ~/.local/bin run :
-# ln -s ~/_harbor/loco/bin/loco.bash loco
-# try making it work from any directory
-# ln -s ~/_harbor/loco/bin/loco.bash ~/.local/bin/loco
+# local dev environment in Jupyter Lab
 
 # open browser to localhost:8889
 cmd.exe /C start microsoft-edge:http://localhost:8889
