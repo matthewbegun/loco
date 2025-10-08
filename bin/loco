@@ -7,11 +7,20 @@ cmd.exe /C start microsoft-edge:http://localhost:8889
 # pull latest loco image
 docker pull matthewbegun/loco:latest
 
+# set up uid and guid for podman
+# this is sort of working, but not quite right
+uid=1000
+gid=100
+subuidSize=$(( $(podman info --format "{{ range .Host.IDMappings.UIDMap }}+{{.Size }}{{end }}" ) - 1 ))
+subgidSize=$(( $(podman info --format "{{ range .Host.IDMappings.GIDMap }}+{{.Size }}{{end }}" ) - 1 ))
+
 # run loco image
-docker run --rm -ti \
+podman run --rm -ti \
+    --uidmap $uid:0:1 --uidmap 0:1:$uid --uidmap $(($uid+1)):$(($uid+1)):$(($subuidSize-$uid)) \
+    --gidmap $gid:0:1 --gidmap 0:1:$gid --gidmap $(($gid+1)):$(($gid+1)):$(($subgidSize-$gid)) \
     --name "local_loco" \
     -e RESTARTABLE=yes \
     -p 8889:8888/tcp \
     -v jovyan:/home/jovyan \
     -v "$(pwd):/home/jovyan/work" \
-    matthewbegun/loco:latest start-notebook.py --IdentityProvider.token=''
+    matthewbegun/loco:latest start-notebook.py --ServerApp.root_dir=/home/jovyan/work --IdentityProvider.token=''
